@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+html {
+    font-size: 12px;
+    background: lightgray;
+}
+
+.router {
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 1.2rem;
+}
+.router .page {
+    flex: 1;
+    border: 1px dashed black;
+    padding: 1rem 1.2rem;
+    max-height: calc(100vh - 4.8rem);
+    background: white;;
+}
+.router .page > div {    
+    max-height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.router .page .blank {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    color: lightgray;
+}
+.router .nav {
+    padding: 1rem 1.2rem;
+}
+.router .nav a {
+    display: block;
+}
+.router .nav h6 {
+    margin: 1rem 0;
+    font-size: 1.6rem;
+}
+
+.stateful-parent,
+.stateful-parent-two {
+    padding: 1rem;
+}
+
+.stateful-parent {
+    background-color: aquamarine;
+}
+.stateful-parent-two {
+    background-color:bisque;
+}
+.stateless-child,
+.stateless-child-two {
+    margin: 1rem 0;
+    padding: 1rem;
+}
+
+.stateless-child {
+    border: 2px solid red;
+}
+.stateless-child span {
+    font-weight: bold;
+    color:red;
+}
+.stateless-child-two {
+    border: 2px solid green;
+}
+.stateful-parent-two input {
+    border: none;
+    outline: none;
+    padding: 1.2rem;
+    border-radius: 0.4rem;
+    margin: 0.5rem 0;
+}
+
+.gram-image {
+    width: 40rem;
+    height: 40rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+.image-path {
+    display: flex;
+    flex-direction: row;
+}
+.image-path .gram-image {
+    margin: 1rem;
+}
+
+.gram-user-detail {
+    display: block;
+}
+.detail-row {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 1.2rem;
+}
+.detail-row .user-pic {
+    background: lightgray;
+    border-radius: 100%;
+}
+.user-pic.small {
+    min-width: 5rem;
+    min-height: 5rem;
+    max-height: 5rem;
+    max-width: 5rem;
+}
+.user-pic.large {
+    min-width: 7.5rem;
+    min-height: 7.5rem;
+    max-height: 7.5rem;
+    max-width: 7.5rem;
+}
+.detail-row .user-detail {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 1.2rem;
+}
+.detail-row .user-detail h5 {
+    color: darkgray;
+    padding: 0.5rem 0;
+}
+.detail-row .user-detail > * {
+    display: flex;
+    align-items: center;
+}
+
+.gram-nav {
+    width: calc(100% - 4rem);
+    display: flex;
+    border: 1px solid lightgray;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    box-shadow: 0px 0px 50px 0px rgba(100, 100, 100, 0.2);
+}
+.gram-nav h2 {
+    letter-spacing: 0.25rem;
+    color: darkgray;
+}
+.gram-nav .nav-search {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gram-nav .nav-search input {
+    border: 1px solid lightgray;
+    border-radius: 0.4rem;
+    padding: 0.5rem;
+}
+.gram-nav .nav-links {
+    display: flex;
+}
+.gram-nav .nav-links .nav-link-item {
+    opacity: 0.5;
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+.gram-nav .nav-links .nav-link-item.active {
+    opacity: 1;
+}
+
+.gram-user-card {
+    width: 40rem;
+    margin: 1rem auto;
+    border: 1px solid lightgray;
+}
+.gram-user-card .gram-image {
+    width: 100%;
+}
+.gram-user-card .gram-user-detail {
+    max-width: 40rem;
+}
+
+.user-profile {
+    padding: 2rem 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.user-profile .user-detail h5 {
+    font-size: 2rem;
+}
+.user-profile .profile-posts {
+    display: flex;
+    overflow-x: hidden;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 10rem;
+}
+.user-profile .gram-image {
+    max-height: 40rem;
+    max-width: 40rem;
+    margin-bottom: 2rem;
+}
+.user-profile .user-pic.large {
+    min-width: 12.5rem;
+    min-height: 12.5rem;
+    max-height: 12.5rem;
+    max-width: 12.5rem;
+}
+
+.search-results { 
+    padding: 1rem 2rem;
+}
+.search-results h4 {
+    font-size: 2rem;
+    font-weight: 100;
+    letter-spacing: 0.2rem;
+    margin: 2rem 0rem;
+}
+.search-results .gram-user-card {
+    margin: 1rem;
+    display: inline-block;
+}
