@@ -7,12 +7,12 @@ import { useState } from "react";
 
 const tabs = [
   {
-    icon: '🏠',
+    icon: 'home',
     url: '',
     name: 'home'
   },
   {
-    icon: '🧑',
+    icon: 'account_circle',
     url: 'profile',
     name: 'profile'
   }
@@ -25,7 +25,7 @@ props = {
 }
 */
 const NavBar = (props) => {
-  const [activeTab, setActiveTab] = useState('home');
+  const [activeTab, setActiveTab] = useState(props.subPath || 'home');
   const [searchValue, setSearchValue] = useState('');
 
   // updateActiveTab and updateSearchValue
@@ -37,17 +37,18 @@ const NavBar = (props) => {
   // https://reactjs.org/docs/hooks-intro.html
 
   const updateActiveTab = (tabObject) => {
-    setActiveTab(tabObject.name);
     if (props.onChangeActiveTab) {
       props.onChangeActiveTab(tabObject);
     }
+    setActiveTab(tabObject.name);
+    setSearchValue('');
   }
 
   const updateSearchValue = (ev) => {
-    setSearchValue(ev.target.value);
     if (props.onUpdateSearchValue) {
       props.onUpdateSearchValue(ev.target.value);
     }
+    setSearchValue(ev.target.value);
   }
 
   return (
@@ -65,7 +66,7 @@ const NavBar = (props) => {
           tabs.map(tabObject => (
             <div
               onClick={() => updateActiveTab(tabObject)}
-              className={`nav-link-item ${activeTab === tabObject.name ? 'active' : ''}`}
+              className={`nav-link-item material-icons ${activeTab === tabObject.name ? 'active' : ''}`}
               key={`nav-to-${tabObject.name}`}
             >
               {tabObject.icon}

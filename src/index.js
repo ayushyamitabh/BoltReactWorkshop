@@ -7,7 +7,7 @@ import './index.css'
 import StatefulParent from './Props/StatefulParent';
 import StatefulParentTwo from './Props/StatefulParentTwo';
 import App from './TheGram/App';
-import data from './TheGram/data';
+import { getData } from './TheGram/data';
 import Feed from './TheGram/Feed';
 import Image from './TheGram/Image';
 import NavBar from './TheGram/NavBar';
@@ -96,12 +96,12 @@ ReactDOM.render(
             )} />
             <Route path="/feed" render={() => (
               <div>
-                <Feed posts={data.feed} />
+                <Feed posts={getData().feed} />
               </div>
             )} />
             <Route path="/profile" render={() => (
               <div>
-                <Profile data={data} />
+                <Profile data={getData()} />
               </div>
             )} />
             <Route path="/theGram/:subPath?" component={App} />

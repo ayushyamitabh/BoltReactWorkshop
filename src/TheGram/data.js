@@ -1,7 +1,7 @@
 // Mock Data
 // Imagine this is coming from an API
 // in a real world use case
-const data = {
+export const data = {
   feed: [
     {
       color: '#ad9dff',
@@ -83,4 +83,8 @@ const data = {
   ],
 };
 
-export default data;
+export const getData = () => data;
+export const updateFeedPost = (i, l) => {
+  data.feed[i].liked = l;
+  console.log(data);
+}

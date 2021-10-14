@@ -19,9 +19,9 @@ const Image = (props) => (
   >
     {/* If and only if isLiked is true, show heart emoji */}
     {props.isLiked && (
-      <div>
+      <div className="material-icons">
         {/* UNICODE FOR HEART EMOJI */}
-        &#128151;
+        favorite
       </div>
     )}
   </div>

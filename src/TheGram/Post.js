@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import data from './data';
+import { updateFeedPost } from './data';
 import Image from  './Image';
 import UserDetail from './UserDetail';
 
@@ -20,18 +20,18 @@ const Post = (props) => {
   const [liked, setLiked] = useState(props.liked || false);
 
   const updateLikedStatus = () => {
-    setLiked(!liked);
     // This would be replaced with an API call
     // or something similar to persist the liked
     // status to the data store
-    if (props.index) {
-      data.feed[props.index].liked = !liked;
+    if (props.index !== undefined && props.index !== null) {
+      updateFeedPost(props.index, !liked);
     }
     // "Hook" to allow parent to be aware of
     // liked status changes
     if (props.onUpdateLikedStatus) { 
       props.onUpdateLikedStatus(!liked);
     }
+    setLiked(!liked);
   }
 
   return (
